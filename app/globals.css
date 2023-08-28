@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply relative bg-[#f8f3ee]
+    }
+    .fit {
+        min-height: calc(100vh - 88px);
+    }
+}
+
+@layer components {
+    .aspect-video {
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 56.25%; /* Tỷ lệ 16:9: 9 / 16 * 100% = 56.25% */
+    }
+
+    .aspect-inner {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    /* Add this CSS to your component's stylesheet or a global stylesheet */
+
+    /* Ensure the video container maintains 16:9 aspect ratio */
+    .video-container {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        max-height: calc(100vh - 32px); /* Adjust as needed to account for other UI elements */
+        overflow: hidden;
+    }
+
+    /* Style for the lesson title */
+    .lesson-title {
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 8px;
+        text-align: center;
+        opacity: 0.9;
+    }
+    /* Remove scroll effect when hovering over the video */
+    .video-container:hover {
+        overflow: hidden; /* Hide scrollbars */
+    }
+
+}
